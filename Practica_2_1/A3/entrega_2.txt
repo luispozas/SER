@@ -1,0 +1,26 @@
+Entrega #2:
+===========
+
+Comandos utilizados:
+====================
+
+$ openssl enc -e -aes-128-cbc -a -pass pass:seguridad -in textoplano1.txt -out texto-aes-128-cbc-1.txt
+
+$ openssl enc -e -aes-128-cbc -a -pass pass:seguridad -in textoplano1.txt -out texto-aes-128-cbc-2.txt
+
+$ cat texto-aes-128-cbc-1.txt 
+U2FsdGVkX1+wr9353HMplWro/xZU2eME9VfDXLpSjbAe9RANPlIdMdeKwgNWpeg3
+F79mCYgpfO7zLJMLa2GDPLicU999b79hj4oyFNPmKj6UgA281isJuzMO5r/0TkIe
+Fh4klxWXZWfFuoNPw4vLEMka73fEY62psXlGP71caZDnYNNrSRosifH5N9u+7QkQ
+x+WvXrKsQmWQriyLjF7qOKniDuslTLEClvMHfVP7HV6w92EMgwVVtk2CTuWOLw3H
+
+$ cat texto-aes-128-cbc-2.txt 
+U2FsdGVkX1/26NieOGLBjRQ8Q+dXKDZkUdoI2Ea9WkMzYEzfwCUhf3nWF8mXAwxB
+dar4rJBx8TR+PnCn+cMqTdCrF2fZDk5kFlFJW8icbxQdlmkXRyIDAfVuEr1y9Dib
+1l12+FJfK0uvoEOj40g1xbqRHL5TMJS5iEUuYWq9lyJTazPY5a6zIo1BN7pjMNBZ
+rqA4PWoXGhQ7YAWoMwZmFhI8wRXv8JJosRxjiEiy4E1BeTWTBuYW+5L8qILGk53i
+
+Son distintos ya que se ha usado la misma password pero distinto SALT, KEY y IV.
+
+
+

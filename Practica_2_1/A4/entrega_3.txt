@@ -1,0 +1,23 @@
+Entrega #3:
+===========
+salt=F5EAE75B2F802FBC
+key=D817598AFF1FECFFEE7D750B29C18F67
+iv =F44B4B64F8D70AD5C6C5BCF0103FEEF9
+
+
+Comandos utilizados:
+====================
+$ openssl enc -e -aes-128-cbc -p -pass pass:seguridad -in textoplano1.txt -out texto-aes-128-cbc.txt
+
+$ openssl enc -e -aes-128-cbc -p -nosalt -pass pass:seguridad -in textoplano1.txt -out texto-aes-128-cbc-nosalt1.txt
+key=1EA9F394F510E2BEB43CB0B317258B09
+iv =BCE9F4FCCEF69407360483690AC9B746
+
+$ openssl enc -e -aes-128-cbc -p -nosalt -pass pass:seguridad -in textoplano1.txt -out texto-aes-128-cbc-nosalt1.txt
+key=1EA9F394F510E2BEB43CB0B317258B09
+iv =BCE9F4FCCEF69407360483690AC9B746
+
+Se puede observar como con -nosalt ambos cifrados tienen la misma salt y el mismo vector de inicializacion.
+
+
+

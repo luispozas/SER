@@ -1,0 +1,65 @@
+Entrega #4:
+===========
+Al cifrar [texto-rc4-1.txt] obtengo la siguiente salt y key:
+salt=4BB6A9F70804A2F2
+key=9B03060EB4F6BCBBA0F2D78BCD8A36E4
+
+
+Comandos utilizados:
+====================
+$ openssl enc -e -rc4 -p -pass pass:seguridad -in textoplano1.txt -out texto-rc4.bin
+salt=60805184505379AD
+key=5F6E9EFED0CEBA0ED196D6EDA58A997E
+
+$ openssl enc -d -rc4 -p -pass pass:seguridad -out textoplano2.txt -in texto-rc4.bin
+salt=60805184505379AD
+key=5F6E9EFED0CEBA0ED196D6EDA58A997E
+
+
+$ openssl enc -e -rc4 -a -p -pass pass:seguridad -in textoplano1.txt -out texto-rc4-1.txt
+salt=4BB6A9F70804A2F2
+key=9B03060EB4F6BCBBA0F2D78BCD8A36E4
+
+$ openssl enc -e -rc4 -a -p -pass pass:seguridad -in textoplano1.txt -out texto-rc4-2.txt
+salt=5D6E2F75C479A0C6
+key=1C587D601352009EF7F6A00E4BB8579B
+
+
+$ diff texto-rc4-1.txt texto-rc4-2.txt
+1,4c1,4
+< U2FsdGVkX19Ltqn3CASi8rdy4buIzdajtbasfDBWKqKevorcEjdlvsM+JHlbCpSr
+< HHBJH6AYRf6GYBd70KzBfTvsACgn4lpt8DlXwkcY/7fdaCq327djfF12dx2cUDwt
+< y7LOAXxjm4mXtvikz47dqehUWUOJoPUYGJUtQ8/CtGdIBlCI/uhPZYijN+4aUOeV
+< LGumWxhRCdrht/h7/Fpl1UWIss2QNyawN8AUUeifyLzlJjeLwgUPgUSpjWA=
+---
+> U2FsdGVkX19dbi91xHmgxiTKgGLaqsAT7Yj9ME/tzUlVs3wvlqlPuxZj8NYRc/lC
+> 3lnKYPmkSep2WbqxxQds2ui+cfUYrkR6w/P8XVFQgKT8J6Qtb1z0py3GA30AfQUu
+> y/wUtw+qGnV3MoUc2KiO3qlp2UqZwSKyYkD5nCqAvnXeHjji5/RuLQhZsHEYWxJm
+> LcWRW+JmOOkFYymnSlXeqVCm5SO2tqXBOQdN6YNzvfp0gPRwynnqamF9KxY=
+
+Los archivos cifrados son distintos poruqe usan disinto valor de salt.
+
+-----------------------------------------------------------------------
+Usando el parametro -nosalt vemos como generamos dos archivos cifrados (ASCII) nuevos que son iguales:
+
+
+$ openssl enc -e -rc4 -a -p -nosalt -pass pass:seguridad -in textoplano1.txt -out texto-rc4-3.txt
+key=1EA9F394F510E2BEB43CB0B317258B09
+
+$ openssl enc -e -rc4 -a -p -nosalt -pass pass:seguridad -in textoplano1.txt -out texto-rc4-4.txt
+key=1EA9F394F510E2BEB43CB0B317258B09
+
+
+$ cat texto-rc4-3.txt
+fU+9ZGWcHE47zuSTxav2r6nKjK2/QPEnItrs9bMddefZbUCqw1G+zJx5lcXv7xQC
+4MuiDobSiwA+qJ29hz7kXgpL/ccCSmXDAUYenvwFIyNPDOgCMUeMlGzt2HpTc0Pc
+s2mcCwgO2Kb316mUlIOFSxzIG4G4xJAKmF/iLgkhvehj2gZ2/Bjxxsp8LBEGMcvD
+qXhEMxNNICyKBmj3UVFfa1gXcMlHwqGg6erexA==
+
+$ cat texto-rc4-4.txt
+fU+9ZGWcHE47zuSTxav2r6nKjK2/QPEnItrs9bMddefZbUCqw1G+zJx5lcXv7xQC
+4MuiDobSiwA+qJ29hz7kXgpL/ccCSmXDAUYenvwFIyNPDOgCMUeMlGzt2HpTc0Pc
+s2mcCwgO2Kb316mUlIOFSxzIG4G4xJAKmF/iLgkhvehj2gZ2/Bjxxsp8LBEGMcvD
+qXhEMxNNICyKBmj3UVFfa1gXcMlHwqGg6erexA==
+
+

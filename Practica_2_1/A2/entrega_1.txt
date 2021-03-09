@@ -1,0 +1,27 @@
+Entrega #1:
+===========
+
+-IV   41f9eab39cc3b6b3fd68b371546124db
+-KEY  e11f73d12a3cdc1a6005ad54fc41b6b4
+
+
+COMANDOS USADOS:
+================
+Comando para generar un  numero de 128 bits (16 bytes): $ openssl rand -hex 16
+
+$  openssl enc -e -aes-128-cbc -iv 41f9eab39cc3b6b3fd68b371546124db -K e11f73d12a3cdc1a6005ad54fc41b6b4 -in textoplano1.txt -out texto-aes-128-cbc.bin
+
+$  openssl enc -d -aes-128-cbc -iv 41f9eab39cc3b6b3fd68b371546124db -K e11f73d12a3cdc1a6005ad54fc41b6b4 -out textoplano2.txt -in texto-aes-128-cbc.bin
+
+
+$  openssl enc -e -aes-128-cbc -a -iv 41f9eab39cc3b6b3fd68b371546124db -K e11f73d12a3cdc1a6005ad54fc41b6b4 -in textoplano1.txt -out texto-aes-128-cbc.txt
+
+$  openssl enc -d -aes-128-cbc -a -iv 41f9eab39cc3b6b3fd68b371546124db -K e11f73d12a3cdc1a6005ad54fc41b6b4 -out textoplano2.txt -in texto-aes-128-cbc.txt
+
+$ cat texto-aes-128-cbc.txt
+CkHjEMofPWU0WscEoKnA80slL5GIUVyBZr15CSZPJ793/9eywqXNQCpL8wTw0jMm
+RQb/LDCO63Jk9a5FRSmR/lMS2JsoQu7QbDTf9huU48GXIgrUQtpVE18BwSjjE/W/
+0UIW7QfSpGSf7POT2nc+66d37S6mE2NMPVqEiPsLnYja7RKrq9sMuL4UgpVSiTYk
+vXq07T8v2oPfS8XlML9VGNwYp3KTxJPPsxqyUPjQK1U=
+
+

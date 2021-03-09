@@ -1,0 +1,4 @@
+Hola,
+Esto es un texto plano de prueba para la practica_2.1 de
+la asignatura de Seguridad en Redes (SER) de la Facultad
+de Informatica (Universidad Complutense de Madrid).

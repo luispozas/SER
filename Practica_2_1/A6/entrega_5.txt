@@ -1,0 +1,23 @@
+Entrega #5:
+===========
+
+SHA1(hosts)= a327b89ef3cbcc8a4f78ac707332579ce111c197
+SHA1(services)= db974d34b5c947da2232b9f1d14eb9b70c79b20c
+
+
+Comandos utilizados:
+====================
+
+$ openssl dgst -sha1 hosts
+SHA1(hosts)= a327b89ef3cbcc8a4f78ac707332579ce111c197
+
+$ openssl dgst -sha1 hosts
+SHA1(hosts)= a327b89ef3cbcc8a4f78ac707332579ce111c197
+
+$ openssl dgst -sha1 services
+SHA1(services)= db974d34b5c947da2232b9f1d14eb9b70c79b20c
+
+$ openssl dgst -sha1 services
+SHA1(services)= db974d34b5c947da2232b9f1d14eb9b70c79b20c
+
+

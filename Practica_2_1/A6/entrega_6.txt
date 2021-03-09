@@ -1,0 +1,21 @@
+Entrega #6:
+===========
+
+HMAC-SHA1(hosts)= 0391118f8c9f2be38270d8da923abc383c1775d2
+HMAC-SHA256(hosts)= dd8ed9a077f84863db4bce9ba07d169737b3fd1e18a8eabc00280740c85ede68
+HMAC-SHA512(hosts)= fceb4c13a697d3e27e2e4d5910fd32040896877a9ac3774977deecc3d6fd8a55f42f049ada41863d794752b597759bc59a7f438599076ba2c3293cbcad0f730a
+
+Comandos utilizados:
+====================
+
+$ openssl dgst -sha1 -hmac seguridad hosts
+HMAC-SHA1(hosts)= 0391118f8c9f2be38270d8da923abc383c1775d2
+
+$ openssl dgst -sha256 -hmac seguridad hosts
+HMAC-SHA256(hosts)= dd8ed9a077f84863db4bce9ba07d169737b3fd1e18a8eabc00280740c85ede68
+
+$ openssl dgst -sha512 -hmac seguridad hosts
+HMAC-SHA512(hosts)= fceb4c13a697d3e27e2e4d5910fd32040896877a9ac3774977deecc3d6fd8a55f42f049ada41863d794752b597759bc59a7f438599076ba2c3293cbcad0f730a
+
+
+
