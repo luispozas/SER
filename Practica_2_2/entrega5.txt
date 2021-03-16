@@ -1,0 +1,28 @@
+
+ENTREGA_5:
+==========
+
+Para firmar un fichero y verificar su firma, se usan las opciones -sign y -verify del
+comando dgst:
+
+$ openssl dgst [-<algoritmo>] -sign XXkey.pem -out sig.bin plain.txt
+$ openssl dgst [-<algoritmo>] -verify XXpubkey.pem -signature sig.bin plain.txt
+
+Por defecto, el archivo de firma (sig.bin) se guarda en formato binario, no en
+hexadecimal, ya que OpenSSL no puede realizar verificación de firmas en formato
+hexadecimal. Si queremos visualizar el resultado de la firma en hexadecimal, se puede
+realizar la conversión con el comando xxd:
+
+$ xxd sig.bin sig.hex
+
+------------------------------------------------------------------------------------------
+
+$ openssl dgst -sign rsakey.pem -out rsa_sig.bin plain.txt
+$ openssl dgst -sign eckey.pem -out ec_sig.bin plain.txt
+
+$ openssl dgst -verify ecpubkey.pem -signature ec_sig.bin plain.txt
+Verified OK
+
+$ openssl dgst -verify rsapubkey.pem -signature rsa_sig.bin plain.txt
+Verified OK
+

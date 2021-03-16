@@ -1,0 +1,93 @@
+
+ENTREGA_8:
+==========
+
+Para firmar y verificar ficheros, se usan los comandos --sign y --verify:
+
+$ gpg --sign [-a] [--digest-algo <algoritmo>] plain.txt
+$ gpg --verify plain.txt.gpg
+
+Para indicar con qué clave se quiere firmar, se puede usar la opción --local-user <id>.
+La opción -a (o --armor) escribe el resultado en ASCII (usando Base64) en lugar de en
+binario. Por defecto el fichero de salida tendrá el mismo nombre que le fichero de entrada
+con extensión .gpg o extensión .asc (si usamos la opción -a). Si queremos dar otro
+nombre al fichero de salida se puede usar la opción --ouput <filename>.
+
+Es importante resaltar que el comando --sign no sólo firma el fichero, sino que también lo
+cifra con la clave pública. Por tanto, la salida plain.txt.gpg contiene el fichero cifrado
+más la firma. Para descifrar el fichero se usa:
+
+$ gpg --decrypt plain.txt.gpg
+
+Si tan sólo queremos obtener la firma, sin incluir el fichero cifrado, se usa el comando
+--detach-sign:
+
+$ gpg --detach-sign [-a] [--digest-algo <algoritmo>] plain.txt
+$ gpg --verify plain.txt.sig plain.txt
+
+------------------------------------------------------------------------------------------------
+
+$ gpg --sign -a --digest-algo sha1 -o hosts_sha1 hosts 
+$ gpg --sign -a --digest-algo sha256 -o hosts_sha256 hosts 
+$ cat hosts_sha1
+-----BEGIN PGP MESSAGE-----
+
+owGbwMvMwMQYE+Gy2JrDs5pxzeIk1oz84pLihIBTB5UVPIBMhcSUlKLU4uLUYi5D
+I3M9AyA0VFDIyU9OzAGphAoaggVLM4u5rKyALAiAK1LILDDTReflFyQlJmdzpaUZ
+GEH1gMQTc3Ly8lOAlkHEjZDEi/JLS1KLirk6GTezMDAyMciKKbI8UVU79Et1rfK0
+OX8iYb5gZQK5noGLUwAmcuAID8Pei2vu/G5/1v1b+N1KPfv7E7N8jQ+mTT5n9zsv
+fpPadOmqMq6rd951f3/w+fS+MAOdb2z5rjlbxRes6w9ZLLBk28cDATsiLtj68HJu
+En5276i+WUp5fVyHeplKd6GayqSL3Knp5y1vHAhnLDJavStpl99CVVuRly2rZbLy
+KpPWcq7+rB7sPo/r3PZtKmYTDj93P1zooynVZTI9YXnRoQ8O1W+tW66961n/56q/
+ybcbotmzLl2/uNQ76Fl7pKXqQo0E19ynvbO5RWzLXs2Sl/fqlLCzDOmqOiyefy/5
+lsQaxeqMPR3izUt6+K83SKU+jkvdte3prR/2T/b2LS37+jj5tdeJJReVdjhEfmQ6
+sZIvk9NP6phl03vRuwWbhJ2eXVhknyw8/Zdd8rq/kjL+yVoyq3tznipFff+7a/Ih
+sb2+idvXy2vb9p4QsdR159M1YzvmaFD4QK9FfJd6bZ0Xw9aSnKoolQthv7blLy6N
+/S779nRoqStL46Q1Ef+ZAq8FpAc+P5NjdeLt/fXXDFVcpqrIix9/BAA=
+=997M
+-----END PGP MESSAGE-----
+
+$ cat hosts_sha256
+-----BEGIN PGP MESSAGE-----
+
+owGbwMvMwMEYE+Gy2JrDs5pxzeIk1oz84pLihIBTN5UVPIBMhcSUlKLU4uLUYi5D
+I3M9AyA0VFDIyU9OzAGphAoaggVLM4u5rKyALAiAK1LILDDTReflFyQlJmdzpaUZ
+GEH1gMQTc3Ly8lOAlkHEjZDEi/JLS1KLirk6GTezMDByMMiKKbI8UVU79Et1rfK0
+OX8iYb5gZQK5noGLUwAmct+U+3/F9Rx1PZelN2/Xd7297MtZtcL5XbxXzrR/7nd+
+tT15+T1r4bkl2s+c30Y2ZaXk259KUD68/9vGTOnir0y2SzreNs70qcrsvvNx7pP9
+BYWyJiIfS7pPfdRo9m3p9Uyx/J/ltX1RRyHDMcXFWxOivfbLTWpT0+93cXtVpMAb
+HHRP5arjr1f1InXe/7y1fugLrF4XnaX2PLF+mafRVNbXwZZ8Omeu8URrmOyYxXdy
+lfOWiW89d7evjfimwyGhqtFU4nd8mtxE6UWyjKYWAWt1mD2Sb7ClZT7jPqtlwcim
+n9Xa4fuP4XJ4c7zbW730ZVs262/cW3jwBf/5QoHGrxfCy3/fkL23q3uuIc/p/e98
+l62IW6F/5UNHJP8unobw6uQ1Mu+TLv2VPfdXXPnnayb2V7tNU2oMpZNUTrQLr+6Y
+/PJq2ETdphmKkzy6D7tInVnB3157riHoxJKDIWuXz7js9pwlS/f+s0szg3cx77E6
+bnNgRVm6c71Q9x+HKybPotZMK/wnkdnrfbMwRDk/Nf+5z8ZuM8MJAA==
+=KV59
+-----END PGP MESSAGE-----
+
+
+$ gpg --decrypt hosts_sha1
+
+# Host addresses
+127.0.0.1  localhost
+127.0.1.1  luis
+::1        localhost ip6-localhost ip6-loopback
+ff02::1    ip6-allnodes
+ff02::2    ip6-allrouters
+gpg: Signature made Tue 16 Mar 2021 04:12:01 PM CET
+gpg:                using RSA key E42526C2FA25AD23969CFC595C5844A33B08497B
+gpg: Good signature from "luispozas <lpozas@ucm.es>" [ultimate]
+
+
+$ gpg --decrypt hosts_sha256
+
+# Host addresses
+127.0.0.1  localhost
+127.0.1.1  luis
+::1        localhost ip6-localhost ip6-loopback
+ff02::1    ip6-allnodes
+ff02::2    ip6-allrouters
+gpg: Signature made Tue 16 Mar 2021 04:12:25 PM CET
+gpg:                using RSA key E42526C2FA25AD23969CFC595C5844A33B08497B
+gpg: Good signature from "luispozas <lpozas@ucm.es>" [ultimate]
+

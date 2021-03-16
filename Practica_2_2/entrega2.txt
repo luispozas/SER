@@ -1,0 +1,30 @@
+
+ENTREGA_2:
+==========
+
+Crea un archivo de texto llamado datos1.txt
+•   Cifra el archivo de texto con la clave pública y guarda el
+    archivo cifrado con el nombre datos1.bin
+•   Descifra el archivo de texto con la clave privada y guarda
+    el archivo descifrado con el nombre datos2.txt
+•   Compara los archivos datos1.txt y datos2.txt, comprueba 
+    que son idénticos
+
+============================================================================================
+$ touch datos1.txt
+$ tee datos1.txt
+Hola, esto es un archivo de prueba para la practica_2.2 de Seguridad en Redes (SER)
+Hola, esto es un archivo de prueba para la practica_2.2 de Seguridad en Redes (SER)
+
+
+$ openssl genpkey -algorithm RSA -out rsakey.pem
+$ openssl pkey -pubout -in rsakey.pem -out rsapubkey.pem
+
+
+$ openssl pkeyutl -encrypt -pubin -inkey rsapubkey.pem -in datos1.txt -out datos1.bin
+$ openssl pkeyutl -decrypt -inkey rsakey.pem -in datos1.bin -out datos2.txt
+
+$ cat datos2.txt
+Hola, esto es un archivo de prueba para la practica_2.2 de Seguridad en Redes (SER)
+
+

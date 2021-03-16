@@ -1,0 +1,153 @@
+
+--------------------------------------------------------------------------
+UTILIZANDO DSA, DH, EC
+--------------------------------------------------------------------------
+GENERACION DE FICHEROS DE PARAMETROS:
+=====================================
+$ openssl genpkey -genparam -algorithm DSA -out dsaparam.pem
+$ openssl genpkey -genparam -algorithm DH -out dhparam.pem
+$ openssl genpkey -genparam -algorithm EC -out ecparam.pem -pkeyopt ec_paramgen_curve:prime192v1
+
+GENERACION DE CLAVES PRIVADAS A PARTIR DE FICHEROS DE PARAMETROS:
+=================================================================
+$ openssl genpkey -paramfile dsaparam.pem -out dsakey.pem
+$ openssl genpkey -paramfile dhparam.pem -out dhkey.pem
+$ openssl genpkey -paramfile ecparam.pem -out eckey.pem
+
+OBTENCION DE LA CLAVE PUBLICA A PARTIR DE LA PRIVADA:
+=====================================================
+$ openssl pkey -pubout -in dsakey.pem -out dsapubkey.pem
+$ openssl pkey -pubout -in dhkey.pem -out dhpubkey.pem
+$ openssl pkey -pubout -in eckey.pem -out ecpubkey.pem
+
+--------------------------------------------------------------------------
+UTILIZANDO RSA
+--------------------------------------------------------------------------
+CREACION DE CLAVE PRIVADA:
+==========================
+$ openssl genpkey -algorithm RSA -out rsakey.pem
+
+OBTENCION DE LA CLAVE PUBLICA A PARTIR DE LA PRIVADA:
+=====================================================
+$ openssl pkey -pubout -in rsakey.pem -out rsapubkey.pem
+
+VER CLAVE PRIVADA DE RSA:
+=========================
+$ openssl pkey -in rsakey.pem -noout -text
+
+RSA Private-Key: (2048 bit, 2 primes)
+modulus:
+    00:e1:5d:6f:66:1f:34:05:7b:29:d2:b3:ed:7d:d0:
+    54:71:af:8d:d1:1a:e0:b2:ad:75:1d:54:fc:7d:dd:
+    83:c0:8b:92:5a:d1:95:1c:b6:dd:0f:49:5b:64:f8:
+    39:20:71:49:28:33:7b:a0:90:ae:1b:bd:43:4a:08:
+    55:2f:8b:01:4b:83:e8:22:47:5c:05:04:54:41:79:
+    74:99:49:f0:1a:87:b2:64:d8:6b:2a:5b:44:68:24:
+    93:cb:86:b4:d7:b0:c7:ef:b2:11:03:52:0e:5b:3e:
+    d4:86:ac:ed:20:4e:00:9e:67:5d:b2:02:ce:fc:20:
+    56:7f:33:54:3c:c4:3e:98:83:26:62:64:c2:d2:a7:
+    52:73:18:df:8d:d8:17:db:c8:2c:3e:4e:6a:f9:d6:
+    85:41:04:f5:a1:ce:c1:b9:fe:3a:55:df:60:ca:48:
+    77:1b:98:db:ae:91:ad:ad:cf:92:47:10:95:a7:66:
+    1a:d9:86:be:83:e6:de:08:97:24:09:72:1e:63:7f:
+    10:b4:26:20:ac:ba:a2:34:e3:2b:dd:77:6a:a0:8c:
+    a5:a3:63:fb:64:9e:0b:5b:6d:f0:60:77:97:83:04:
+    67:f8:c1:41:70:8d:1b:c0:07:52:35:c3:f7:69:da:
+    9f:49:c4:ea:93:a5:6e:4a:02:f3:ee:76:da:b5:04:
+    ff:35
+publicExponent: 65537 (0x10001)
+privateExponent:
+    0f:67:d3:b5:a7:6c:66:f3:84:68:62:e4:59:35:64:
+    90:60:ef:d0:db:85:80:b1:5a:d0:26:7f:1c:1b:88:
+    66:21:24:60:10:f3:a0:82:df:99:ab:ea:13:7c:e4:
+    6a:d3:53:ac:eb:d8:07:a1:dc:45:09:2b:10:64:81:
+    6e:3e:92:58:17:2c:47:2b:99:9e:be:2d:04:4c:c9:
+    2b:b1:62:38:6e:0e:43:d6:87:7c:dd:c0:4f:5e:30:
+    bc:38:f9:23:c5:71:e5:70:c6:b8:f3:63:07:d9:c3:
+    ad:71:24:c4:90:90:7a:43:96:a4:14:8d:11:af:24:
+    3a:8d:c7:b4:5f:b5:e7:b6:ee:91:b1:52:1b:8c:d1:
+    53:a9:52:c0:17:78:f4:6c:92:ea:cc:06:12:9d:08:
+    28:d6:94:45:ed:62:9d:fb:3a:80:ad:5b:8e:ef:29:
+    b0:23:50:7b:ba:5b:18:18:60:77:62:2c:99:94:52:
+    4a:b0:05:be:0d:fd:f0:8d:cd:59:5b:6f:ee:57:83:
+    e6:65:04:a0:90:b6:e0:0e:57:63:e5:c9:48:45:ef:
+    05:2f:82:65:09:73:0e:64:cf:49:d7:0d:8c:54:3b:
+    97:e2:37:f0:d6:0d:1e:9f:13:f8:fb:71:c3:d4:aa:
+    18:54:9f:35:06:c9:b4:dd:09:0d:68:c1:32:e7:82:
+    01
+prime1:
+    00:f2:33:dd:41:d4:1f:b9:c2:5b:fa:1c:4d:a7:b2:
+    96:13:52:6d:ac:9e:6e:8a:d5:8a:e5:de:26:7c:76:
+    86:88:40:ac:dc:c4:e2:7e:08:05:0f:2f:8d:e3:aa:
+    5c:6d:18:67:33:3d:85:17:12:c7:5d:d4:2f:02:ef:
+    57:23:54:12:a2:7b:18:f4:45:e5:2f:90:db:00:ad:
+    00:90:07:ee:9e:e6:ef:46:a4:67:a5:07:37:b2:0b:
+    a0:aa:46:09:ba:de:7c:a1:a3:93:fb:4b:c0:5f:0c:
+    72:e2:a2:96:f6:67:58:ba:57:db:8f:9b:3d:97:79:
+    b8:29:6a:c6:b4:f2:b7:44:db
+prime2:
+    00:ee:34:05:75:49:90:00:e4:3e:5b:c3:3e:09:14:
+    c3:f6:ab:f0:3c:9b:3a:90:06:fa:3a:05:64:20:0a:
+    e7:ab:00:a2:46:0f:c1:d2:b7:67:e0:aa:47:f8:80:
+    82:32:e9:06:69:f8:74:73:60:37:1f:e1:ca:5e:d6:
+    c0:1f:62:95:cf:76:9a:18:e4:99:e9:79:bd:60:92:
+    8e:fb:b4:c8:0a:eb:f1:fb:9e:27:ca:38:26:cc:fa:
+    52:e4:5a:11:18:ca:d4:1f:3d:87:cc:5e:83:b6:08:
+    d3:5f:92:4b:79:bc:a7:7f:a1:87:18:97:26:15:3b:
+    ca:e9:00:d7:8a:94:17:81:2f
+exponent1:
+    00:e2:e5:29:6a:a8:e0:cb:b1:c3:5e:8c:33:47:5d:
+    aa:f0:10:f1:43:9b:ec:2c:cd:9d:e0:77:fb:8f:ef:
+    ad:5a:69:54:47:41:7e:78:d8:e4:7c:74:6d:35:11:
+    7c:a2:8b:10:ea:d4:c0:20:7c:6c:1e:7f:4f:47:2d:
+    96:71:37:2a:79:e2:5d:df:40:b7:52:97:1e:43:04:
+    cf:19:1f:05:31:01:60:b8:c9:fd:7a:81:47:70:d9:
+    29:bb:39:ff:95:7b:26:40:7a:b0:7f:e3:58:24:f2:
+    d1:91:75:05:7d:72:15:92:04:0a:60:fe:ea:75:44:
+    06:fd:6d:d5:16:e0:a6:45:af
+exponent2:
+    5b:19:3a:1d:29:0d:11:ca:38:af:0f:74:62:34:b6:
+    dd:57:d4:80:d9:3d:04:68:26:ba:99:e5:38:fb:f2:
+    ad:cb:88:44:13:32:a5:4b:cf:46:74:d9:21:88:c4:
+    42:84:2c:17:cb:15:7e:2a:85:ea:83:87:c9:cd:87:
+    9c:79:2f:a2:30:51:ae:c3:7e:b9:73:fd:a1:39:6b:
+    c5:87:d6:19:97:32:ec:70:07:f7:a6:91:f0:42:ac:
+    00:f9:11:20:d2:31:5d:e1:42:56:3e:af:50:a6:ff:
+    6f:c5:9b:67:eb:66:83:c1:5a:d1:64:bd:03:d1:e2:
+    40:4a:3a:24:9d:8e:7f:b1
+coefficient:
+    00:b4:af:61:bc:a9:e5:2f:03:26:79:3f:8f:28:da:
+    3c:f7:39:6a:87:67:8c:55:67:b7:77:85:26:8b:64:
+    cd:93:cf:5f:f7:56:49:f3:0d:86:1e:a8:5d:39:f9:
+    44:20:fc:64:1b:1b:7f:aa:12:75:35:6b:3b:18:94:
+    dc:63:5a:ca:87:bf:84:ca:ca:3b:21:45:13:f3:86:
+    1b:88:e7:61:b9:f8:ef:ae:20:ba:5e:2a:83:b1:d2:
+    80:cd:e2:fb:ea:6d:12:79:99:f1:08:de:b7:1d:90:
+    98:3e:cf:4b:ab:96:d3:04:e7:b5:d7:81:26:b1:c3:
+    35:e9:8b:c7:70:c1:42:54:66
+
+VER CLAVE PUBLICA DE RSA:
+=========================
+$ openssl pkey -pubin -in rsapubkey.pem -noout -text
+RSA Public-Key: (2048 bit)
+Modulus:
+    00:e1:5d:6f:66:1f:34:05:7b:29:d2:b3:ed:7d:d0:
+    54:71:af:8d:d1:1a:e0:b2:ad:75:1d:54:fc:7d:dd:
+    83:c0:8b:92:5a:d1:95:1c:b6:dd:0f:49:5b:64:f8:
+    39:20:71:49:28:33:7b:a0:90:ae:1b:bd:43:4a:08:
+    55:2f:8b:01:4b:83:e8:22:47:5c:05:04:54:41:79:
+    74:99:49:f0:1a:87:b2:64:d8:6b:2a:5b:44:68:24:
+    93:cb:86:b4:d7:b0:c7:ef:b2:11:03:52:0e:5b:3e:
+    d4:86:ac:ed:20:4e:00:9e:67:5d:b2:02:ce:fc:20:
+    56:7f:33:54:3c:c4:3e:98:83:26:62:64:c2:d2:a7:
+    52:73:18:df:8d:d8:17:db:c8:2c:3e:4e:6a:f9:d6:
+    85:41:04:f5:a1:ce:c1:b9:fe:3a:55:df:60:ca:48:
+    77:1b:98:db:ae:91:ad:ad:cf:92:47:10:95:a7:66:
+    1a:d9:86:be:83:e6:de:08:97:24:09:72:1e:63:7f:
+    10:b4:26:20:ac:ba:a2:34:e3:2b:dd:77:6a:a0:8c:
+    a5:a3:63:fb:64:9e:0b:5b:6d:f0:60:77:97:83:04:
+    67:f8:c1:41:70:8d:1b:c0:07:52:35:c3:f7:69:da:
+    9f:49:c4:ea:93:a5:6e:4a:02:f3:ee:76:da:b5:04:
+    ff:35
+Exponent: 65537 (0x10001)
+

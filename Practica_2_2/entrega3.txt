@@ -1,0 +1,24 @@
+
+ENTREGA_3:
+==========
+El método de transporte de clave consiste en que el emisor genera aleatoriamente una
+clave simétrica (clave de sesión) para cifrar los datos. A su vez, la clave de sesión se cifra
+con la clave pública del receptor. Por ejemplo:
+
+$ openssl rand 32 -out keyfile
+
+$ openssl enc -des3 -pass file:keyfile -in plain.txt -out cipher.bin
+
+$ openssl pkeyutl -encrypt -pubin -inkey rsapubkey.pem -in keyfile -out keyfile.bin
+
+
+
+Los datos cifrados (cipher.bin), junto con la clave de sesión cifrada (keyfile.bin), se
+envían al receptor. A continuación, el receptor usa su clave privada para descifrar la clave
+de sesión y con ésta ya puede descifrar los datos:
+
+$ openssl pkeyutl -decrypt -inkey rsakey.pem -in keyfile.bin > keyfile
+
+$ openssl enc -d -des3 -pass file:keyfile -in cipher.bin -out plain.txt
+
+

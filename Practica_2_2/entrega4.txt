@@ -1,0 +1,26 @@
+
+ENTREGA_4:
+==========
+
+Crea un segundo conjunto de claves DH y EC (usando el mismo fichero de parámetros que en 
+el primer ejercicio) y obtén las claves secretas compartidas a partir de los dos pares de 
+claves.
+
+-----------------------------------------------------------------------------------------------
+El método de acuerdo de clave consiste en que las dos partes cooperan para acordar una
+clave secreta de forma segura. Para ello, cada una de las partes genera una clave simétrica
+a partir de su clave privada y la clave pública de la otra parte. Esto se puede realizar usando
+la opción -derive de pkeyutl:
+
+
+$ openssl pkeyutl -derive -inkey XXkey1.pem -peerkey XXpubkey2.pem -out secretkey1
+
+$ openssl pkeyutl -derive -inkey XXkey2.pem -peerkey XXpubkey1.pem -out secretkey2
+
+$ cmp secretkey1 secretkey2
+
+
+El primer comando simula la generación de la clave secreta compartida por una de las
+partes, usando su clave privada y la clave pública de la otra parte. El segundo comando
+simula la generación por la otra parte. Los secretos acordados han de ser idénticos.
+

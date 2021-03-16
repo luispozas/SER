@@ -1,0 +1,2 @@
+Hola, esto es un archivo de prueba para la practica_2.2 de Seguridad en Redes (SER)
+

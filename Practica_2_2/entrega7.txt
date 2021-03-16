@@ -1,0 +1,21 @@
+
+ENTREGA_7:
+==========
+
+$ gpg --encrypt --recipient luispozas -a hosts
+
+
+(Pide la contraseña de seguridad para descifrar:)
+
+$ gpg --decrypt hosts.asc
+gpg: encrypted with 3072-bit RSA key, ID 97F52A719C4D4E1C, created 2021-03-16
+      "luispozas <lpozas@ucm.es>"
+# Host addresses
+127.0.0.1  localhost
+127.0.1.1  luis
+::1        localhost ip6-localhost ip6-loopback
+ff02::1    ip6-allnodes
+ff02::2    ip6-allrouters
+
+
+
