@@ -1,0 +1,65 @@
+$ gpg --edit-key user1 quit
+Clave secreta disponible.
+
+pub  2048R/3A191C81  creado: 2021-04-06  caduca: nunca       uso: SC  
+                     confianza: absoluta      validez: absoluta
+sub  2048R/39CE4182  creado: 2021-04-06  caduca: nunca       uso: E   
+[  absoluta ] (1). user1
+
+
+
+$ gpg --edit-key user2 quit
+Clave secreta disponible.
+
+pub  2048R/72D6A4A8  creado: 2021-04-06  caduca: nunca       uso: SC  
+                     confianza: dudosa        validez: total
+sub  2048R/4D2C6ED2  creado: 2021-04-06  caduca: nunca       uso: E   
+[   total   ] (1). user2
+
+
+
+$ gpg --edit-key user3 quit
+Clave secreta disponible.
+
+pub  2048R/473E16ED  creado: 2021-04-06  caduca: nunca       uso: SC  
+                     confianza: no definido   validez: dudosa
+sub  2048R/4026E5F0  creado: 2021-04-06  caduca: nunca       uso: E   
+[   dudosa  ] (1). user3
+
+
+
+$ gpg --edit-key user4 quit
+Clave secreta disponible.
+
+pub  2048R/4721176B  creado: 2021-04-06  caduca: nunca       uso: SC  
+                     confianza: dudosa        validez: total
+sub  2048R/3BA25B1A  creado: 2021-04-06  caduca: nunca       uso: E   
+[   total   ] (1). user4
+
+
+
+$ gpg --edit-key user5 quit
+Clave secreta disponible.
+
+pub  2048R/2CF78B2D  creado: 2021-04-06  caduca: nunca       uso: SC  
+                     confianza: dudosa        validez: total
+sub  2048R/99ADD0F6  creado: 2021-04-06  caduca: nunca       uso: E   
+[   total   ] (1). user5
+
+-------------------------------------------------------------------------
+$ gpg --check-trustdb
+gpg: 3 dudosa(s) necesarias, 1 completa(s) necesarias,
+modelo de confianza PGP
+gpg: nivel: 0  validez:   1  firmada:   3  confianza: 0-, 0q, 0n, 0m, 0f, 1u
+gpg: nivel: 1  validez:   3  firmada:   1  confianza: 0-, 0q, 0n, 3m, 0f, 0u
+
+
+
+
+
+
+
+
+
+
+
