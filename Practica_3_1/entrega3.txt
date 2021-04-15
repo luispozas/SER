@@ -1,0 +1,6 @@
+Encrypted with 128-bit encryption
+Version TLS: TLS 1.1
+Mecanismos criptograficos utilizados para cifrado: 
+    - AES_128_CBC (conexion)
+    - SHA1 (autenticación mensajes)
+    - ECDHE_RSA -> (intercambio de clave)

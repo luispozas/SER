@@ -1,0 +1,19 @@
+1) ¿Qué versión de TLS soporta el cliente (mensaje ClientHello)?
+TSL 1.0
+
+2) ¿Cuántas cipher suites diferentes soporta el cliente (mensaje ClientHello)?
+14
+
+3) ¿Qué versión de TLS soporta el servidor (mensaje ServerHello)?
+TLS 1.1
+
+4) ¿Cuál es la cipher suite seleccionada por el servidor (mensaje ServerHello)?
+TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (0x013)
+
+5) ¿Cuál es el algoritmo de firma (signature) usado en el certificado del servidor (mensaje
+Certificate)?
+256
+
+6) ¿Cuál es la longitud de la clave pública tipo EC Diffie-Hellman utilizada en el intercambio
+de clave (mensajes ServerKeyExchange y ClientKeyExchange)?
+65
