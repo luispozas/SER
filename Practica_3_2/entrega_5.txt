@@ -1,0 +1,11 @@
+Compara la conversación entre el cliente y el servidor SMTP:
+------------------------------------------------------------
+Entrega 3:
+Content-Type: text/plain; charset=utf-8; format=flowed
+
+Entrega 4:
+Content-Type: application/pkcs7-mime; name="smime.p7m"; smime-type=enveloped-data
+
+
+En la entrea 3 este campo nos indica que el mensaje va en texto plano y charset (codificación) en utf-8, 
+en cambio, en la entrega 4 nos indica de que es un mensaje cifrado con pkcs7-mime.

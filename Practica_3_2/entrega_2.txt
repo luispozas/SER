@@ -1,0 +1,17 @@
+usuario@mailserver:~$ sudo telnet localhost 143
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.
+* OK [CAPABILITY IMAP4rev1 LITERAL+ SASL-IR LOGIN-REFERRALS ID ENABLE IDLE STARTTLS AUTH=PLAIN] Dovecot ready.
+a LOGIN benito benito
+a OK [CAPABILITY IMAP4rev1 LITERAL+ SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT SORT=DISPLAY THREAD=REFERENCES THREAD=REFS MULTIAPPEND UNSELECT CHILDREN NAMESPACE UIDPLUS LIST-EXTENDED I18NLEVEL=1 CONDSTORE QRESYNC ESEARCH ESORT SEARCHRES WITHIN CONTEXT=SEARCH LIST-STATUS SPECIAL-USE] Logged in
+a LIST "" *
+* LIST (\HasNoChildren) "/" "INBOX"
+a OK List completed.
+a EXAMINE Trash
+a NO Mailbox doesn't exist: Trash
+a LOGOUT
+* BYE Logging out
+a OK Logout completed.
+Connection closed by foreign host.
+

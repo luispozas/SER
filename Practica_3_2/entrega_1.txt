@@ -1,0 +1,11 @@
+usuario@mailserver:~$ telnet localhost 25
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.
+220 debian ESMTP Postfix (Debian/GNU)
+HELO mailserver.lab.ser
+250 debian
+QUIT
+221 2.0.0 Bye
+Connection closed by foreign host.
+

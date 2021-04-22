@@ -1,0 +1,151 @@
+Conversación entre cliente y servidor SMTP:
+-----------------------------------------------------------
+220 debian ESMTP Postfix (Debian/GNU)
+EHLO host1.lab.ser
+250-debian
+250-PIPELINING
+250-SIZE 10240000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250 DSN
+MAIL FROM:<ana@mailserver.lab.ser> SIZE=449
+250 2.1.0 Ok
+RCPT TO:<benito@mailserver.lab.ser>
+250 2.1.5 Ok
+DATA
+354 End data with <CR><LF>.<CR><LF>
+To: benito@mailserver.lab.ser
+From: Ana Gil Molina <ana@mailserver.lab.ser>
+Subject: prueba
+Message-ID: <5EB2E79B.8050400@mailserver.lab.ser>
+Date: Thu, 22 Apr 2021 12:20:52 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101
+Icedove/38.7.0
+MIME-Version: 1.0
+Content-Type: application/pkcs7-mime; name="smime.p7m"; smime-type=enveloped-data
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="smime.p7m"
+Content-Description: S/MIME Encrypted Message
+
+
+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
+.
+
+250 2.0.0 Ok: queued as 74BBE21DBC
+QUIT
+221 2.0.0 Bye
+
+
+
+Conversación entre cliente y servidor IMAP:
+-----------------------------------------------------------
+
+* OK [CAPABILITY IMAP4rev1 LITERAL+ SASL-IR LOGIN-REFERRALS ID ENABLE IDLE STARTTLS AUTH=PLAIN] Dovecot ready.
+1 STARTTLS
+1 OK Begin TLS negotiation now.
+............*Rn9..@.A.*..>pV{..R
+......
+... .......e.."Z.Z..-Zf....Pu...
+H.....+./.
+.......3.9./.5.
+.............mailserver.lab.ser......
+.................#...$~{7./..............'#.....x....:...{.o...2.T..{......="3N.4.c.#.I].t......k.z..^*...(.I...`..N.
+...w..nn.z.x.g.Tn/. ..p"...Q_..S..?.....p_.\j:..r....${.8~.....f.j.../.3,.Nb<h..........
+................................................................................................................................................................................9...5..`.Y(.*.X.+.....Fer.....+..h..!}M..3..
+..........#.................0...0................xFj0
+..*.H..
+.....0h1.0...U.
+..Dovecot mail server1.0
+..U....debian1.0
+..U....debian1&0$..*.H..
+.....root@mailserver.lab.ser0..
+210422085717Z.
+310422085717Z0h1.0...U.
+..Dovecot mail server1.0
+..U....debian1.0
+..U....debian1&0$..*.H..
+.....root@mailserver.lab.ser0.."0
+..*.H..
+..........0..
+.........0ChS.*9V\..#.....;..BOk...>.a...w...O.3.l.....,.".._..z.#....4.].V.|..V......x..}.?b.t...?Q..(.*.m..\..L.
+....5......X....)...St.A.B-.\t.>u5,...}.Y1.R.#A.]}......<.."..Uw..s...e.Jq-......=...p..
+s.~..gY.....X..Q4.T..R....E....MR.......Z3.C.M.J..\1.%.........P0N0...U......2:...+.1..r.e
+.tC.k.0...U.#..0...2:...+.1..r.e
+.tC.k.0...U....0....0
+..*.H..
+.............e.....k.S..ji...tC..P.Q..V.......K.C...|../.x23~$..$...y..........p.1..T.......A...$.F......d.H...0`sx[..t.%.....k...q|
+Oa....4.S...52..[*...b,..-...&.....+.*C>.|4....>q..S.k.......fLH...1.............x..X.1..}....4..I\N......$.\..D..2!k...`..7...[.e..r............X...l7.+...}...x.....6V..X:......W....Ch........9.
+]....U_..2......:{.....p...4.Kz.XS..?......._...pF...@...9..-;.>
+.]Z...$\........e..A?J.........I.X..-....x1...{K.x}........u.=.....uCM.-
+...*.?.#n.c....lY........=T...\....%Y.l:!1C.pf......09......Uy.I}............Z.0.h..../...!.... A...+.L..l..4.B.....h+.W....T..#...<e.`........D.................mL..s,.[.m._^...d8./......NEs......L....9.)"+.c..{....UZ#.z<...;........#...Ry.....0XCd..~..f;64............C..).......Y..(.....*....Mf....P&.......S.....^....M..$.|..=....................../.....Vo...?..w.:)p./..X7. ..u.O..8.\l..@@i^.$q....A..T. ]..@..M...P.Z........B.q..0p.<...MV~.z(4.;.........p...u.V|?h..
+W.....Q..........@i..{u|.._i.l...<...Z?.......;....!.........y<..kh.....P.Q"... ..............,....V\V.AE.7.CXXQoNBKD.xQ....[..K..............\.....{^IB!......m..+....1....eA#{'.....N.S^..%S...W...S.R....^8&.5.P.o...79...T!xA.\/[wJ.g..M..?..a'..?..[\.5.E.....-...N.V.`Z...o..........@....z...W..@w...P4|......#2 UPCF..X...r..H.A.....1..hq.0..).D.q.....@.$...T...B.....9...Yz....
+~l.....`k..~B6...!.LM...0.`....:....Sl.......zH........P6..`Cn..../Un......y|E~Q...n. .#.b.....u...
++..(.f...7..P.1......u2m.L.C......x.ta.3....1&7..@...Y~R..q..rU;.e.+.....H=.... ]....#...p...is.GV..4......R........-....r|.Ghw....P..?....@..O7l.c........Z&...viN...I.+s......2=....'t...Asm.A...;... z..0....0..F..El.p.......h..|,8I..g.7$;...Ey..:r.I.3}........@.Y.R.r.Ae6]L'V.S*.+......5.!.8HC
+.a..@/j/m.L.3.J. ."....{.&P.t......P\..{B..f...
+.d.B..w...u.2..Q9.....&..R..2....U.......^....."..c.|..eIr[sq.w4..$....82.!.e.oBy.lc..7..AmZ1......4z..].~B..}.....q.F...C
+.<...1.....DZH
+..#.Od........P.cx...E..SNn.[.49.90.)
+3..
+,dQ.LZ.+....&.+Du'......P(#.A........!.k....../....B...?P1?.....P..42..:.|..p..L>....e...> .G......0$..w...$..}.X.S"q...hB..d......`.e...!...t......`.uo.....5......v...>b...X......d....G:..'Uo.
+..../..\.\?....P...X.:.]....1...z....4.7I`.R.B.=.......P..,.[vU-.87....YB.u.,c....2.O..:..&..y..4..H.....mG.&..g.(m.M....pFK^..e@m.C.<K4....@J.f..a.`..W2S.%v......i...l..B.....>....Y..+.e..HqH..=....#9.2<.....p...5.+.w)Q...2........7...D.QSD...N@_%S.}d....e}.....t..q..j..0..x...Y.U`a.8.P..`.P8.g.%!o.`.....V...;....(...
+."F."h..uO.j.2..T.Xz..A!(....... F ...i<o..`o....1...m..pa5.....E@..@o....6.M.N...27......(
+....dUAL...;K'...M..g...!t...n? <.......h...3.9...]...........~.+6...2..M1.I....%/Z.qjy.._U.to.......P.X....W. _.:..5..C3..3...n.u.!xQ.a+ ....=..<.....Z..)>...q..d.?....@.N._....
+.. .#i.l.T..........%S...........,|:.A...K,TH..|NL{t4Og......_4b..=FR.
+JC.".@.R.../.Y.....M...........D]. K.b.N.F..r.....S.zupPF.'^....*.t'o.....s..O..|.vs.Z...h
+....j#..|u.w._>m.7Wx$.....Dc...&.).zy^...8.........0c.E..s.....*..z9l...,....fI.........].5..}......@.O...1.x.ad..7$.)....S.o...*.l.f..V....v..<...hWb.+..*...v..P...J....}.D.6P3...].................`..L.......9...Y.r..+.0.9M...jX...2.:.w...N...<.B6.t5$.+OXp.G..{.......Ra........74o)....Q.<g...c.tI5X.)........R.c.w_..E%..~H.x.K.....|[.u..q..Cb.d.....a....J..{.[..S....4?(.f"4.1..N../x$J..K.<...?..9.$
+...X..G..ap..r#H...1...k?.z..r.uVl....=F.....]...j./.......G.[.D....+C.....%t..sK.2...r..={.......`....RC....|aD..]@..]T.......p.,.l.0.z...Z.V..._*X.......3.UZ..&....D.^_.....UO.?Z.5J.;j.R./.....;.....(...C.7....D.%........s...+...q.bl..b..PS.+..Z...;5.(p.f.....Lc..72N.s.n..P...E.G...T..$.....Y.M...J.4`.Q.E..<...X.|..
+....
+........^c.XIp..[..YT.]=!..x.Q..@.t.`.<1C......zB_.....H ......v.....>......4.E...
+.a5....4....\}...ZXB=.B....._.1K.=...;Q.K.........o..JJ.........>%...B..... v..h(V...p~..Z.....C.l..2.........c......c.Ph|.....7y.L_P....s.f.&Y.G.......?o.[..yl-m...?%..zc:f).....9........h.........T.C...L..XLQpF_&....=..L.w)_!.....7;.J.A10.u.9,/)tm..+?k_.z......86*.f.......X..
+9.R.6..|.. ...t.ap.n..X..a.j@VZ......................}.9>..c.P.....U.;S...VF....l..m...5.^.`..o......GP.A..F.l..ek..O.).]'^..g...:~....`....0....l.`.a..V....<....Za...........U..@.....p...m.xBK......y......Dx-...|DbC>..6..m.&[...|...... U.G.~.:\1.;1...[Q..vF#........e.......&.azozd......*.P...6.....utZ...F..#.Z^.K......0p.C..[.mn\B.G...W/*
+J`OPA......yE...Q\b....k9+dp.G....^.N.....g.....a9/.EL..T`h..../&~.....c..i..{..3.X=.....;..A.%x.
+..J
+...l.c.G........%..R.#......y.ie...P.^2...T.s...s.6.o....3.s.c.<.............x2(..s{..Tl...e....s...E...)7."48..k=..pvs.S.e..pd.!Tl;....b..$.I.).x..OMw.z.......z.+\.DV..wy?.#.%....0i..._.GU1.6c;..ee..v...../z+.j$.E.ni.w.&..<..GI...\#......5....x...-..f.).5.6.:..\W..om..xuB<.f...z..J...o.....k../..[.zE...l..x..i..d...Z*....'...q..t}.=...K.q.p..[...7...|C.K _e..3.0k.<.._
+,..E9.?j.e1..Q....9..
+P........k....S....D:.O.rg..i8.ei}5eh8q,...|..N0..Q}....(`
+..r.....-.......`gj..^.4......{N.M.KK..v.....K)5.?..._..f.a...bM.y...@.zk.......V......J0!...F.S.....s.-.K.f.}...x .....g&....d.w:
+......"..:>.{..V........T....T>..M...M...(...~a.,.#
+C...p].B..m.9.:...}
+.....nC.%(U..i...G..+l..d..1.0...?..bN.@....&.#..U.H.Oz......q~...'tg..P?'7.D...#@.).$..."..$.w...8..8@...,5D,......Z.$.^?HR.....V...EpW..]s2..1.y.....(.O..7......g.'_...<)....f..G..oDyp.....B.....0.vX#o..N.p;x.;+.....t....$M.iV.#;V.q...;A.F.&:......0..I..[.T..N.............R.1*.....A.M......J
+..{.....@.....f..\g/........,...-j.=.....)..}...B..v..y".}$....$lh...N.8I....0f.m........j....y....E...,....#/..X...%k.....<......@r?Q..m.....[.~.+..M....0......O....5..|I..O.A....SM...y^..v..8M.....0N..@.o....$o.............5.........K*.....H.).F.....@...u..n..]....M+......?..,...n....a_.f.)B.....v....k....J....XU.....@.!G..y...W.V.I=..#!.s......F.5|g13sa.$wV._.B..1.E.m@k.,.1Wj./..M....p..X<4...?......S8...O0..0.....,f(.......P.C..kV..
+a.....M...u.."...ny.....(.....].KQ...5.$Hj8...Px.......  ?..H.....0y.../t.R.z.Q..B9).P.Q^...9y.m.P$.#.....zn..C!.i.....0&.T.=....m.:...D.a#....>..U@.G..$......y..Ic...h
