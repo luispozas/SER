@@ -1,0 +1,56 @@
+usuario@debian:~$ dig DS rediris.es +dnssec
+
+; <<>> DiG 9.8.4-rpz2+rl005.12-P1 <<>> DS rediris.es +dnssec
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 38992
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;rediris.es.			IN	DS
+
+;; ANSWER SECTION:
+rediris.es.		43200	IN	DS	18739 8 2 7AB62E59309F945313A8E6D35262AA691E6D1C2A7479D63405B54F88 DDFC2D89
+rediris.es.		43200	IN	DS	18739 8 1 FAE92A298DF5B776BB603FCE3E033B7EC55C0B98
+
+;; Query time: 23 msec
+;; SERVER: 8.8.8.8#53(8.8.8.8)
+;; WHEN: Wed Apr 28 19:42:05 2021
+;; MSG SIZE  rcvd: 123
+
+---------------------------------------------------------------------------
+
+
+usuario@debian:~$ dig DS rediris.es +trace +dnssec
+
+; <<>> DiG 9.8.4-rpz2+rl005.12-P1 <<>> DS rediris.es +trace +dnssec
+;; global options: +cmd
+.			42299	IN	NS	l.root-servers.net.
+.			42299	IN	NS	d.root-servers.net.
+.			42299	IN	NS	j.root-servers.net.
+.			42299	IN	NS	b.root-servers.net.
+.			42299	IN	NS	f.root-servers.net.
+.			42299	IN	NS	c.root-servers.net.
+.			42299	IN	NS	h.root-servers.net.
+.			42299	IN	NS	k.root-servers.net.
+.			42299	IN	NS	m.root-servers.net.
+.			42299	IN	NS	a.root-servers.net.
+.			42299	IN	NS	i.root-servers.net.
+.			42299	IN	NS	g.root-servers.net.
+.			42299	IN	NS	e.root-servers.net.
+;; Received 239 bytes from 8.8.8.8#53(8.8.8.8) in 117 ms
+
+rediris.es.		43133	IN	DS	18739 8 1 FAE92A298DF5B776BB603FCE3E033B7EC55C0B98
+rediris.es.		43133	IN	DS	18739 8 2 7AB62E59309F945313A8E6D35262AA691E6D1C2A7479D63405B54F88 DDFC2D89
+;; Received 123 bytes from 192.58.128.30#53(192.58.128.30) in 8 ms
+
+---------------------------------------------------------------------------------
+Puedo identificar los registros DS y su dominio: (j.root-servers.net.)
+
+rediris.es.	43133	IN	DS	18739 8 1 FAE92A298DF5B776BB603FCE3E033B7EC55C0B98
+
+rediris.es.	43133	IN	DS	18739 8 2 7AB62E59309F945313A8E6D35262AA691E6D1C2A7479D63405B54F88 DDFC2D89
+---------------------------------------------------------------------------------
+

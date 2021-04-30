@@ -1,0 +1,21 @@
+usuario@debian:~$ dig A www.rediris.es +dnssec +multi
+
+1. Tipo de registro firmado: A
+2. Algoritmo de firma digital usado: 8 = RSA/SHA-256
+3. Número de componentes del nombre de dominio firmado: 2
+4. TTL original de los registros firmados: 7200
+5. Fecha de expiración de la firma: 20210528035045
+6. Fecha de firma: 20210428030609
+7. Identificador de la clave de firma: 53625
+8. Nombre del dominio firmante: rediris.es
+9. Firma digital en base64: 
+	EKqyQwX9xAvMEjvjkKqXPwo45kwAyENI7MNnKyU4+P
+	29pugvYaCbhZsjpQJjvUO+YNDVRzjNtIAdLF5czqPD
+	naJ6qaHfPDBkOXKGjjY+OwAWRjb2ZhxsVzWCPurcDK
+	K9+fdIR02nxNiCnqWrSuMIKNg0lnUjxZ7oXX3x+IA0
+	1YRGFZYKT+d0suJnbWXEFqmrvSOit21yy1c2WdC3/7
+	KNNuUXXM1VWkdorHfYvviITjJpKx7FFKD7d7Akjs6H
+	jqU6NaTV7c/CMN5+7wYkcZ5SqDxD5hoNub0p9hIjFU
+	rW6BW0V+csqRaiwWqEmDUL7TuNhAXXbTUONrvamNq5
+	VDkQ==
+	

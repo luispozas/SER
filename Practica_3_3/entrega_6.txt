@@ -1,0 +1,45 @@
+usuario@debian:~$ dig . DNSKEY | grep "DNSKEY.257" > key
+usuario@debian:~$ dig A www.rediris.es. +sigchase +trusted-key=key +topdown
+
+Launch a query to find a RRset of type A for zone: www.rediris.es. with nameservers:
+.			42267	IN	NS	b.root-servers.net.
+.			42267	IN	NS	f.root-servers.net.
+.			42267	IN	NS	h.root-servers.net.
+.			42267	IN	NS	c.root-servers.net.
+.			42267	IN	NS	i.root-servers.net.
+.			42267	IN	NS	a.root-servers.net.
+.			42267	IN	NS	k.root-servers.net.
+.			42267	IN	NS	e.root-servers.net.
+.			42267	IN	NS	l.root-servers.net.
+.			42267	IN	NS	d.root-servers.net.
+.			42267	IN	NS	m.root-servers.net.
+.			42267	IN	NS	j.root-servers.net.
+.			42267	IN	NS	g.root-servers.net.
+
+Se comprueba la validez de la firma con los nameservers...
+
+Launch a query to find a RRset of type DNSKEY for zone: .
+Se comprueba la validez de la firma de la "root zone"
+
+;; DNSKEYset:
+.			41786	IN	DNSKEY	256 3 8 AwEAAa+HvD7XXjmL+1htThUQyZW7oWGnjzKHJASg3TSR5Bmu5LfnSVW7 fxqZa2oAYo2ionIQWyqAj/loApzg8GNMhyIibftPJso54uWRQ2GaoMrw LD5SLu676kf7urJq6nqdjNC0aJM/C888li69lVH6tiu2tZm1NH3cmgfn MUJpD60bsrDUqs7XwftmNkdkHa4ltQbM3UNPyfTaNBQYoH3wpOpSjdk3 tyDRnreBO6Idrw+DGf/rve4sL3qiSaXfYIkcwAwozxR34iHU5dbCDs8S 6FmZYhoSVKVgNSUkudxhd9/6RrZkYRgvwRsQXl3UwsacU1DsXcORqIC+ 7NlQ6M2OJVU=
+.			41786	IN	DNSKEY	257 3 8 AwEAAaz/tAm8yTn4Mfeh5eyI96WSVexTBAvkMgJzkKTOiW1vkIbzxeF3 +/4RgWOq7HrxRixHlFlExOLAJr5emLvN7SWXgnLh4+B5xQlNVz8Og8kv ArMtNROxVQuCaSnIDdD5LKyWbRd2n9WGe2R8PzgCmr3EgVLrjyBxWezF 0jLHwVN8efS3rCj/EWgvIWgb9tarpVUDK/b58Da+sqqls3eNbuv7pr+e oZG+SrDK6nWeL3c6H5Apxz7LjVc1uTIdsIXxuOLYA4/ilBmSVIzuDWfd RUfhHdY6+cn8HFRm+2hM8AnXGXws9555KrUB5qihylGa8subX2Nn6UwN R1AkUTV74bU=
+
+
+
+Launch a query to find a RRset of type RRSIG for zone: .
+Se comprueba la validez de la firma de la "root zone"
+
+;; DNSKEYset:
+.			41786	IN	DNSKEY	256 3 8 AwEAAa+HvD7XXjmL+1htThUQyZW7oWGnjzKHJASg3TSR5Bmu5LfnSVW7 fxqZa2oAYo2ionIQWyqAj/loApzg8GNMhyIibftPJso54uWRQ2GaoMrw LD5SLu676kf7urJq6nqdjNC0aJM/C888li69lVH6tiu2tZm1NH3cmgfn MUJpD60bsrDUqs7XwftmNkdkHa4ltQbM3UNPyfTaNBQYoH3wpOpSjdk3 tyDRnreBO6Idrw+DGf/rve4sL3qiSaXfYIkcwAwozxR34iHU5dbCDs8S 6FmZYhoSVKVgNSUkudxhd9/6RrZkYRgvwRsQXl3UwsacU1DsXcORqIC+ 7NlQ6M2OJVU=
+.			41786	IN	DNSKEY	257 3 8 AwEAAaz/tAm8yTn4Mfeh5eyI96WSVexTBAvkMgJzkKTOiW1vkIbzxeF3 +/4RgWOq7HrxRixHlFlExOLAJr5emLvN7SWXgnLh4+B5xQlNVz8Og8kv ArMtNROxVQuCaSnIDdD5LKyWbRd2n9WGe2R8PzgCmr3EgVLrjyBxWezF 0jLHwVN8efS3rCj/EWgvIWgb9tarpVUDK/b58Da+sqqls3eNbuv7pr+e oZG+SrDK6nWeL3c6H5Apxz7LjVc1uTIdsIXxuOLYA4/ilBmSVIzuDWfd RUfhHdY6+cn8HFRm+2hM8AnXGXws9555KrUB5qihylGa8subX2Nn6UwN R1AkUTV74bU=
+
+
+;; RRSIG of DNSKEY is missing to continue validation: FAILED
+
+;; cleanandgo 
+
+
+
+
+

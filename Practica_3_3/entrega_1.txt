@@ -1,0 +1,112 @@
+usuario@debian:~$ dig A www.rediris.es
+
+; <<>> DiG 9.8.4-rpz2+rl005.12-P1 <<>> A www.rediris.es
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 39162
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;www.rediris.es.			IN	A
+
+;; ANSWER SECTION:
+www.rediris.es.		4145	IN	A	130.206.13.20
+
+;; Query time: 12 msec
+;; SERVER: 8.8.8.8#53(8.8.8.8)
+;; WHEN: Wed Apr 28 18:19:10 2021
+;; MSG SIZE  rcvd: 48
+
+-------------------------------------------------------------------------------
+La dirección IP asociada al nombre www.rediris.es es: 130.206.13.20
+-------------------------------------------------------------------------------
+
+
+
+
+usuario@debian:~$ dig PTR 1.182.184.199.in-addr.arpa.
+
+; <<>> DiG 9.8.4-rpz2+rl005.12-P1 <<>> PTR 1.182.184.199.in-addr.arpa.
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 24625
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;1.182.184.199.in-addr.arpa.	IN	PTR
+
+;; ANSWER SECTION:
+1.182.184.199.in-addr.arpa. 5318 IN	PTR	sun.rediris.es.
+
+;; Query time: 14 msec
+;; SERVER: 8.8.8.8#53(8.8.8.8)
+;; WHEN: Wed Apr 28 18:22:27 2021
+;; MSG SIZE  rcvd: 72
+
+-------------------------------------------------------------------------------
+El nombre DNS asociado a la dirección IP 199.184.182.1 es: sun.rediris.es
+-------------------------------------------------------------------------------
+
+
+
+usuario@debian:~$ dig NS rediris.es
+
+; <<>> DiG 9.8.4-rpz2+rl005.12-P1 <<>> NS rediris.es
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 52602
+;; flags: qr rd ra; QUERY: 1, ANSWER: 5, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;rediris.es.			IN	NS
+
+;; ANSWER SECTION:
+rediris.es.		3517	IN	NS	chico.rediris.es.
+rediris.es.		3517	IN	NS	scsnms.switch.ch.
+rediris.es.		3517	IN	NS	ns15.communitydns.net.
+rediris.es.		3517	IN	NS	sun.rediris.es.
+rediris.es.		3517	IN	NS	ns02.fccn.pt.
+
+;; Query time: 16 msec
+;; SERVER: 8.8.8.8#53(8.8.8.8)
+;; WHEN: Wed Apr 28 18:23:49 2021
+;; MSG SIZE  rcvd: 157
+
+-------------------------------------------------------------------------------
+La lista de servidores DNS del dominio rediris.es:
+ - chico.rediris.es.
+ - scsnms.switch.ch.
+ - ns15.communitydns.net.
+ - sun.rediris.es.
+ - ns02.fccn.pt.
+-------------------------------------------------------------------------------
+
+
+
+usuario@debian:~$ dig MX rediris.es
+
+; <<>> DiG 9.8.4-rpz2+rl005.12-P1 <<>> MX rediris.es
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 10268
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;rediris.es.			IN	MX
+
+;; ANSWER SECTION:
+rediris.es.		30	IN	MX	20 mx01.puc.rediris.es.
+rediris.es.		30	IN	MX	20 mx02.puc.rediris.es.
+
+;; Query time: 35 msec
+;; SERVER: 8.8.8.8#53(8.8.8.8)
+;; WHEN: Wed Apr 28 18:26:18 2021
+;; MSG SIZE  rcvd: 74
+
+-------------------------------------------------------------------------------
+La lista de servidores de correo del dominio rediris.es:
+ - mx01.puc.rediris.es.
+ - mx02.puc.rediris.es.
+-------------------------------------------------------------------------------
+
+

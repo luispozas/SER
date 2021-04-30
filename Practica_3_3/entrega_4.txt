@@ -1,0 +1,118 @@
+$ dig DNSKEY luis.berkeley.edu. +dnssec +multi
+
+; <<>> DiG 9.8.4-rpz2+rl005.12-P1 <<>> DNSKEY luis.berkeley.edu. +dnssec +multi
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 50389
+;; flags: qr rd ra ad; QUERY: 1, ANSWER: 0, AUTHORITY: 6, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 512
+;; QUESTION SECTION:
+;luis.berkeley.edu.	IN DNSKEY
+
+;; AUTHORITY SECTION:
+berkeley.edu.		299 IN SOA sut-vps-ib1.net.berkeley.edu. hostmaster.berkeley.edu. (
+				2043053796 ; serial
+				10800      ; refresh (3 hours)
+				1080       ; retry (18 minutes)
+				2419200    ; expire (4 weeks)
+				300        ; minimum (5 minutes)
+				)
+berkeley.edu.		299 IN RRSIG SOA 10 2 10800 20210503175051 (
+				20210429165051 13628 berkeley.edu.
+				XxTOKzv1r5jlNKPTHxraB6yrEfow56F9rr7P26uWvs6J
+				T7jhp0cCGni1XuR2ykHBYOf1ObpR9uOC9vG9yUbwrvHE
+			        u5fbkslj5vFvVweaierjkvcaHFUCKNikgdarfwfijfr3
+				SGPecB/YrVIsT4Fbfw0yG7B/noYFKWHZiMs9pkIaesx7
+				hT4SFl34ztr4kSIT/AbiqnTAEykZSk/CDfr7j7E= )
+berkeley.edu.		299 IN NSEC *askoski.berkeley.edu. A NS SOA MX TXT RRSIG NSEC DNSKEY
+berkeley.edu.		299 IN RRSIG NSEC 10 2 300 20210503083430 (
+				20210429080043 13628 berkeley.edu.
+				qa7PYVKUO7QctrWCPtXG6/9LhvXePTXwnWoG9OEoSlAl
+				dfrw532khgf3g6Yfgkjaglkg4hGKfl34fjhfdsl34fka
+				vueEEBcJPHQGqxhc2O4RdBLcqgQc9M+rQr7lT6RM58Iz
+				b8/FLc0fePQlkO+DbjYQ82nAVoPV/RaTeiA2xoI= )
+fah.berkeley.edu.	299 IN NSEC fallingrocks.berkeley.edu. A RRSIG NSEC
+fah.berkeley.edu.	299 IN RRSIG NSEC 10 3 300 20210503081423 (
+				20210429071543 13628 berkeley.edu.
+				UrhnuZ4dkEmbE/ZBc6jmFic3Yu0iZ5Ao7r7iEyaxMfLn
+				bGktdUgcmgPfjrsGHydkhgdr76dkht4078fjhf4hgmcm
+				cOCPzdn75GCOPSG/suLo3XS+eVm6/2LyL90cx6II6jhS
+				GJy5Ghgukyf7687fkgfkhjgfkh776KHIHgkdhd== )
+
+;; Query time: 179 msec
+;; SERVER: 8.8.8.8#53(8.8.8.8)
+;; WHEN: Thu Apr 28 14:10:42 2021
+;; MSG SIZE  rcvd: 720
+
+Registro NSEC:  fah.berkeley.edu.	299 IN NSEC fallingrocks.berkeley.edu. A RRSIG NSEC
+
+---------------------------------------------------------------------------------------------------
+
+
+$ dig DNSKEY luis.usp.br. +dnssec +multi
+
+; <<>> DiG 9.8.4-rpz2+rl005.12-P1 <<>> DNSKEY luis.usp.br. +dnssec +multi
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 1425
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 8, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 512
+;; QUESTION SECTION:
+;luis.usp.br.		IN DNSKEY
+
+;; AUTHORITY SECTION:
+usp.br.			299 IN SOA a.dns.usp.br. hostmaster.usp.br. (
+				2018061057 ; serial
+				14400      ; refresh (4 hours)
+				3600       ; retry (1 hour)
+				1209600    ; expire (2 weeks)
+				300        ; minimum (5 minutes)
+				)
+usp.br.			299 IN RRSIG SOA 14 2 21600 20210516142741 (
+				20210429052101 7231 usp.br.
+				0gKum+c49DEITJ4rzQZtThO083irRKPHEIphfaNqgXbZ
+				Z3r6QRAt5f5TOUMAglnd1OeVjZHr/0H5VCC5B1IBc/Vl
+				pr/yOvq1rDjRjSFXClwCDU74qIgMVYcH/yBQtmOq )
+FORN94IA8GPQELP0Q5PRH8BEFH1JN520.usp.br. 299 IN	NSEC3 1 1 35 FAE6B836770BBAB1 FOVFLP4V5GFG3MG04KB4RFGD0VLM3JPJ A NS SOA MX TXT AAAA NAPTR RRSIG DNSKEY NSEC3PARAM TYPE257
+FORN94IA8GPQELP0Q5PRH8BEFH1JN520.usp.br. 299 IN	RRSIG NSEC3 14 3 300 20210516142741 (
+				20210429052101 7231 usp.br.
+				PgnIklv3aV+8ouctndhWI7Mlvzg49zQWFuxXOhURg12z
+				OJP76D1fQpeTtxlBB7p2Eemhp5srFbMMGubZlUH+nrTX
+				FakkeUxUDF5pUN8lsqPali50ngyjrbf4iShMGbus )
+E69TKP1EQM58OFA4121BEM80M73AH972.usp.br. 299 IN	NSEC3 1 1 35 FAE6B836770BBAB1 EBJ1JJM2HT9AH0F59EBLF93UNSTNO7AO NS DS RRSIG
+E69TKP1EQM58OFA4121BEM80M73AH972.usp.br. 299 IN	RRSIG NSEC3 14 3 300 20210516142741 (
+				20210429052101 7231 usp.br.
+				IXfX5+avW9tIrLuWaeV3Kybai98v/HK69QrgBjGUtS2H
+				fq3o+nCd+pecJZKCV95Ntmi8RStorKQVTXhMDLl7DxXH
+				cc2qGLrl0UofHsa8w/d1fMUr4IUq4ycLNZ4LSoBI )
+D3DVH3HVB6N4LN100N9SQUDAPQP23S5A.usp.br. 299 IN	NSEC3 1 1 35 FAE6B836770BBAB1 D439HAM3KGMAMQUKQBGVIF3UG1V01QR5
+D3DVH3HVB6N4LN100N9SQUDAPQP23S5A.usp.br. 299 IN	RRSIG NSEC3 14 3 300 20210516142741 (
+				20210429052101 7231 usp.br.
+				3q+ZHuueXaY5+bXglunvOgu4eS/j/Xc/KzT2x9mWWCt6
+				iLFdXvXWeZSyQuu7MsuJs/7ekawKJVz/LecY7rgrwy3l
+				QWv1CZXcT17sYeqP9WfVjLo1pnyMMWRYypNlo4yS )
+
+;; Query time: 227 msec
+;; SERVER: 8.8.8.8#53(8.8.8.8)
+;; WHEN: Thu Apr 29 20:01:00 2021
+;; MSG SIZE  rcvd: 886
+
+
+1) Nombre DNS anterior: fah.berkeley.edu.
+2) Nombre DNS siguiente: fallingrocks.berkeley.edu.
+3) Tipos de RR para fah.berkeley.edu.: A RRSIG NSEC
+
+NSEC3: E69T5GHE56LKJSFG679FDHDHSE3AH972.usp.br. 299 IN	NSEC3 1 1 35 HOJVSTOWBLFFOKBD YJOHLOBC34FSSG67GDAFGPKNPFHFKG6K NS DS RRSIG
+
+1) E69T5GHE56LKJSFG679FDHDHSE3AH972
+2) 1=SHA-1
+3) 1=Sí se permite
+4) 35
+5) HOJVSTOWBLFFOKBD
+6) YJOHLOBC34FSSG67GDAFGPKNPFHFKG6K
+7) TNS DS RRSIG
+

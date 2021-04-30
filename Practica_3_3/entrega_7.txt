@@ -1,0 +1,43 @@
+usuario@debian:~$ cat /var/cache/bind/named_dump.db
+;
+; Start view _default
+;
+;
+; Cache dump of view '_default' (cache _default)
+;
+$DATE 20210428181831
+; answer
+berkeley.edu.		264	IN A	35.163.72.93
+; answer
+www.rediris.es.		4277	A	130.206.13.20
+; answer
+ietf.org.		593	A	4.31.198.44
+;
+; Address database dump
+;
+;
+; Unassociated entries
+;
+;	8.8.8.8 [srtt 58116] [flags 00002000] [ttl 1621]
+;	8.8.4.4 [srtt 26775] [flags 00002000] [ttl 1621]
+;
+; Bad cache
+;
+;
+; Start view _bind
+;
+;
+; Cache dump of view '_bind' (cache _bind)
+;
+$DATE 20210428181831
+;
+; Address database dump
+;
+;
+; Unassociated entries
+;
+;
+; Bad cache
+;
+; Dump complete
+
