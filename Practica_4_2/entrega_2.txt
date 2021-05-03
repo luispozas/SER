@@ -1,0 +1,6 @@
+$ sudo ip route show cache
+
+local 192.168.1.11 from 192.168.1.1 dev lo  src 192.168.1.11 
+    cache <local,src-direct>  iif eth1
+local 192.168.1.11 from 192.168.1.10 dev lo  src 192.168.1.11 
+    cache <local,src-direct>  iif eth1

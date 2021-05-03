@@ -1,0 +1,83 @@
+$ sudo nmap -sT 192.168.1.11 -p 1-100
+
+Starting Nmap 6.00 ( http://nmap.org ) at 2021-05-01 12:03 CET
+Nmap scan report for 192.168.1.11
+Host is up (0.00097s latency).
+PORT   STATE  SERVICE
+20/tcp closed ftp-data
+21/tcp open   ftp
+22/tcp open   ssh
+23/tcp closed telnet
+24/tcp closed priv-mail
+25/tcp closed smtp
+
+Nmap done: 1 IP address (1 host up) scanned in 13.04 seconds
+
+-----------------------------------------------------------------------
+
+$ sudo nmap -sS 192.168.1.11 -p 1-100
+
+Starting Nmap 6.00 ( http://nmap.org ) at 2021-05-01 12:04 CET
+Nmap scan report for 192.168.1.11
+Host is up (0.00079s latency).
+PORT   STATE  SERVICE
+20/tcp closed ftp-data
+21/tcp open   ftp
+22/tcp open   ssh
+23/tcp closed telnet
+24/tcp closed priv-mail
+25/tcp closed smtp
+
+Nmap done: 1 IP address (1 host up) scanned in 13.12 seconds
+
+-----------------------------------------------------------------------
+
+$ sudo nmap -sA 192.168.1.11 -p 1-100
+
+Starting Nmap 6.00 ( http://nmap.org ) at 2021-05-01 12:04 CET
+Nmap scan report for 192.168.1.11
+Host is up (0.00074s latency).
+PORT   STATE      SERVICE
+20/tcp unfiltered ftp-data
+21/tcp unfiltered ftp
+22/tcp unfiltered ssh
+23/tcp unfiltered telnet
+24/tcp unfiltered priv-mail
+25/tcp unfiltered smtp
+
+Nmap done: 1 IP address (1 host up) scanned in 13.14 seconds
+
+-----------------------------------------------------------------------
+
+$ sudo nmap -sF 192.168.1.11 -p 1-100 
+
+Starting Nmap 6.00 ( http://nmap.org ) at 2021-05-01 12:07 CET
+Nmap scan report for 192.168.1.11
+Host is up (0.00099s latency).
+PORT   STATE         SERVICE
+20/tcp closed        ftp-data
+21/tcp open|filtered ftp
+22/tcp open|filtered ssh
+23/tcp closed        telnet
+24/tcp closed        priv-mail
+25/tcp closed        smtp
+
+Nmap done: 1 IP address (1 host up) scanned in 14.02 seconds
+
+-----------------------------------------------------------------------
+
+$ sudo nmap -sN 192.168.1.11 -p 1-100 
+
+Starting Nmap 6.00 ( http://nmap.org ) at 2021-05-01 12:08 CET
+Nmap scan report for 192.168.1.11
+Host is up (0.00081s latency).
+PORT   STATE         SERVICE
+20/tcp closed        ftp-data
+21/tcp open|filtered ftp
+22/tcp open|filtered ssh
+23/tcp closed        telnet
+24/tcp closed        priv-mail
+25/tcp closed        smtp
+
+Nmap done: 1 IP address (1 host up) scanned in 14.16 seconds
+

