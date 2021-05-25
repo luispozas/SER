@@ -1,0 +1,94 @@
+Establece en el FW la política por defecto de las tres cadenas de la tabla FILTER (INPUT,
+OUTPUT, FORWARD) a descartar (DROP):
+
+$ sudo iptables -P INPUT DROP
+$ sudo iptables -P OUTPUT DROP
+$ sudo iptables -P FORWARD DROP
+
+-------------------------------------------------------------------------------------------
+Permite el acceso al interfaz loopback en el FW:
+
+$ sudo iptables -A INPUT -i lo -j ACCEPT
+$ sudo iptables -A OUTPUT -o lo -j ACCEPT
+
+-------------------------------------------------------------------------------------------
+A continuación, define en el FW las reglas de filtrado que se indican a continuación, en el
+orden indicado. Todas las reglas se deben añadir a la cadena FORWARD.
+-------------------------------------------------------------------------------------------
+1. Permitir todos los paquetes pertenecientes a conexiones en estado ESTABLISHED o
+RELATED:
+
+$ sudo iptables -A FORWARD -m state --state ESTABLISHED -j ACCEPT
+$ sudo iptables -A FORWARD -m state --state RELATED -j ACCEPT
+
+-------------------------------------------------------------------------------------------
+2. Permitir ping de la red interna a la externa.
+Para ello es necesario aceptar los paquetes ICMP de tipo echo request que entran
+por la interfaz interfaz red interna (eth1). Observa que no es necesario permitir
+explícitamente las respuestas echo reply que entran por la interfaz externa (eth2),
+ya que a éstas se les aplica el estado RELATED.
+
+$ sudo iptables -A FORWARD -i eth1 --icmp-type 8 -j ACCEPT
+
+-------------------------------------------------------------------------------------------
+3. Permitir todas las conexiones ssh nuevas, tanto entrantes como salientes
+Para ello es necesario aceptar todos los paquetes tcp con estado NEW dirigidos al
+puerto destino 22 (ssh).
+Una vez definida esta regla comprueba que es posible realizar una conexión ssh desde
+las máquinas internas hacia la máquina externa, y también desde la máquina externa a
+las máquinas internas.
+
+$ sudo iptables -A FORWARD -p tcp -m state --state NEW  --dport 22 -j ACCEPT
+
+-------------------------------------------------------------------------------------------
+
+4. Suponiendo que el Host_A actúa como servidor web público, permitir conexiones
+nuevas dirigidas al servidor http de dicho host.
+Para ello es necesario aceptar todos los paquetes tcp con estado NEW dirigidos a la IP
+destino del Host_A (192.168.1.10) y al puerto destino 80 (http).
+
+$ sudo iptables -A FORWARD -p tcp -m state --state NEW -d 192.168.1.10/24 --dport 80 -j ACCEPT
+
+-------------------------------------------------------------------------------------------
+
+5. Regla antispoofing 1: prohibir que entren paquetes desde la red externa con una
+dirección origen perteneciente a la red interna.
+Para ello es necesario rechazar todos los paquetes que entren por la interfaz externa
+(eth2) y que tengan una IP origen perteneciente a la red interna (192.168.1.0/24).
+
+$ sudo iptables -A FORWARD -i eth2 -s 192.168.1.0/24 -j DROP
+
+-------------------------------------------------------------------------------------------
+
+6. Regla antispoofing 2: prohibir que salgan paquetes hacia la red externa con una
+dirección origen que no pertenece a la red interna.
+Para ello se insertará una regla en la posición 4 que rechace los paquetes que entran
+por la interfaz interna (eth1) con una dirección IP origen distinta de 192.168.1.0/24.
+Para ello es necesario usar el operador de negación (!), con siguiente sintaxis:
+! -s 192.168.1.0/24.
+
+$ sudo iptables -A FORWARD -i eth1 ! -s 192.168.1.0/24 -j DROP
+
+-------------------------------------------------------------------------------------------
+
+7. Reglas para registrar (log) las acciones del firewall, aplicado a las reglas antispoofing.
+Para ello, es necesario repetir las dos reglas antispoofing anteriores, pero usando la
+acción –j LOG, en lugar de –j DROP (se necesita una regla para registrar, y otra, con
+los mismos criterios para descartar). Las reglas se escribirán siguiendo las siguientes
+recomendaciones:
+- Se creará un LOG de nivel 4 (Warning) usando la opción --log-level warning
+- Se añadirá el prefijo “IP Spoofing” a los mensajes de LOG usando la opción
+--log-prefix “IP Spoofing”
+- Para que las reglas LOG tengan efecto se deben colocar antes de las reglas DROP
+(colocaremos las reglas LOG en las posiciones 3 y 4, respectivamente)
+ 
+$ sudo iptables -A FORWARD -i eth2 -s 192.168.1.0/24 -j LOG --log-prefix "IP Spoofing"
+$ sudo iptables -A FORWARD -i eth1 ! -s 192.168.1.0/24 -j LOG --log-prefix "IP Spoofing"
+
+---------------------------------------------------------------------------------------------
+
+
+
+
+
+

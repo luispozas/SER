@@ -1,0 +1,24 @@
+usuario@debian:~$ sudo cat /var/log/daemon.log
+
+Muestro solo los ultimos registros -----------------------------------------------------------------------------
+
+May  25 12:15:49 debian charon: 16[IKE] authentication of '1.1.1.1' (myself) with pre-shared key
+May  25 12:15:49 debian charon: 16[IKE] establishing CHILD_SA secret
+May  25 12:15:49 debian charon: 16[ENC] generating IKE_AUTH request 1 [ IDi N(INIT_CONTACT) IDr AUTH SA TSi TSr N(MOBIKE_SUP) N(ADD_4_ADDR) N(MULT_AUTH) N(EAP_ONLY) ]
+May  25 12:15:49 debian charon: 16[NET] sending packet: from 1.1.1.1[4500] to 2.2.2.2[4500]
+May  25 12:15:49 debian charon: 03[NET] received packet: from 2.2.2.2[4500] to 1.1.1.1[4500]
+May  25 12:15:49 debian charon: 03[ENC] parsed IKE_AUTH response 1 [ IDr AUTH SA TSi TSr N(AUTH_LFT) N(MOBIKE_SUP) N(ADD_4_ADDR) ]
+May  25 12:15:49 debian charon: 03[IKE] authentication of '2.2.2.2' with pre-shared key successful
+May  25 12:15:49 debian charon: 03[IKE] IKE_SA secret[1] established between 1.1.1.1[1.1.1.1]...2.2.2.2[2.2.2.2]
+May  25 12:15:49 debian charon: 03[IKE] scheduling reauthentication in 11577s
+May  25 12:15:49 debian charon: 03[IKE] maximum IKE_SA lifetime 11617s
+May  25 12:15:49 debian charon: 03[IKE] CHILD_SA secret{1} established with SPIs cac068d9_i c47400a4_o and TS 192.168.1.0/24 === 192.168.2.0/24 
+May  25 12:15:49 debian charon: 03[IKE] received AUTH_LIFETIME of 9851s, scheduling reauthentication in 8711s
+May  25 12:15:49 debian charon: 03[IKE] peer supports MOBIKE
+May  25 12:16:15 debian charon: 15[CFG] received stroke: initiate 'secret'
+May  25 12:16:15 debian charon: 09[IKE] establishing CHILD_SA secret
+May  25 12:16:15 debian charon: 09[ENC] generating CREATE_CHILD_SA request 2 [ SA No TSi TSr ]
+May  25 12:16:15 debian charon: 09[NET] sending packet: from 1.1.1.1[4500] to 2.2.2.2[4500]
+May  25 12:16:15 debian charon: 14[NET] received packet: from 2.2.2.2[4500] to 1.1.1.1[4500]
+May  25 12:16:15 debian charon: 14[ENC] parsed CREATE_CHILD_SA response 2 [ SA No TSi TSr ]
+May  25 12:16:15 debian charon: 14[IKE] CHILD_SA secret{2} established with SPIs c48898cc_i c2e5de56_o and TS 192.168.1.0/24 === 192.168.2.0/24

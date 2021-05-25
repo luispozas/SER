@@ -1,0 +1,5 @@
+$ cat /proc/net/nf_conntrack
+ipv4     2 tcp      6 431959 ESTABLISHED src=1.1.1.10 dst=1.1.1.1 sport=50528 dport=22 src=192.168.1.11 dst=1.1.1.10 sport=22 dport=50528 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 41 TIME_WAIT src=1.1.1.10 dst=1.1.1.1 sport=50525 dport=22 src=192.168.1.11 dst=1.1.1.10 sport=22 dport=50524 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 49 TIME_WAIT src=1.1.1.10 dst=1.1.1.1 sport=50526 dport=22 src=192.168.1.11 dst=1.1.1.10 sport=22 dport=50525 [ASSURED] mark=0 zone=0 use=2
+ipv4     2 tcp      6 59 TIME_WAIT src=1.1.1.10 dst=1.1.1.1 sport=50527 dport=22 src=192.168.1.11 dst=1.1.1.10 sport=22 dport=50526 [ASSURED] mark=0 zone=0 use=2
