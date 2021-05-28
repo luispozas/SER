@@ -1,0 +1,51 @@
+usuario@debian:~$ ssh -v -N -R 8080:3.3.3.3:80 usuario@1.1.1.1
+
+OpenSSH_6.0p1 Debian-4+deb7u4, OpenSSL 1.0.1e 11 Feb 2013
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug1: Connecting to 1.1.1.1 [1.1.1.1] port 22.
+debug1: Connection established.
+debug1: permanently_set_uid: 0/0
+debug1: SELinux support disabled
+debug1: identity file /root/.ssh/id_rsa type -1
+debug1: identity file /root/.ssh/id_rsa-cert type -1
+debug1: identity file /root/.ssh/id_dsa type -1
+debug1: identity file /root/.ssh/id_dsa-cert type -1
+debug1: identity file /root/.ssh/id_ecdsa type -1
+debug1: identity file /root/.ssh/id_ecdsa-cert type -1
+debug1: Remote protocol version 2.0, remote software version OpenSSH_6.0p1 Debian-4+deb7u4
+debug1: match: OpenSSH_6.0p1 Debian-4+deb7u4 pat OpenSSH*
+debug1: Enabling compatibility mode for protocol 2.0
+debug1: Local version string SSH-2.0-OpenSSH_6.0p1 Debian-4+deb7u4
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug1: kex: server->client aes128-ctr hmac-md5 none
+debug1: kex: client->server aes128-ctr hmac-md5 none
+debug1: sending SSH2_MSG_KEX_ECDH_INIT
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: Server host key: ECDSA 62:f4:08:e7:8e:3e:3d:cd:3b:f9:bd:fd:de:bd:7c:45
+The authenticity of host '1.1.1.1 (1.1.1.1)' can't be established.
+ECDSA key fingerprint is 62:f4:08:e7:8e:3e:3d:cd:3b:f9:bd:fd:de:bd:7c:45.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '1.1.1.1' (ECDSA) to the list of known hosts.
+debug1: ssh_ecdsa_verify: signature correct
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug1: SSH2_MSG_NEWKEYS received
+debug1: SSH2_MSG_SERVICE_REQUEST sent
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug1: Authentications that can continue: publickey,password
+debug1: Next authentication method: publickey
+debug1: Trying private key: /root/.ssh/id_rsa
+debug1: Trying private key: /root/.ssh/id_dsa
+debug1: Trying private key: /root/.ssh/id_ecdsa
+debug1: Next authentication method: password
+usuario@1.1.1.1's password: 
+debug1: Authentication succeeded (password).
+Authenticated to 1.1.1.1 ([1.1.1.1]:22).
+debug1: Remote connections from LOCALHOST:8080 forwarded to local address 3.3.3.3:80
+debug1: Requesting no-more-sessions@openssh.com
+debug1: Entering interactive session.
+debug1: remote forward success for: listen 8080, connect 3.3.3.3:80
+debug1: All remote forwarding requests processed
+
